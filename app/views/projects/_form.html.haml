@@ -1,4 +1,5 @@
 = form_tag projects_path do
+    = error_messages_for :project
 
     = label :project, :name, 'Name'
     = text_field :project, :name
