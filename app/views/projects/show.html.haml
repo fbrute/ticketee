@@ -1,1 +1,5 @@
-%h2 = @project.name 
+= title(@project.name, "Projects")
+- if content_for?(:title)
+    = yield(:title)
+- else
+    = Ticketee

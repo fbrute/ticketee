@@ -18,3 +18,7 @@ Then /^I should see "(.*?)"$/ do |arg1|
   page.should have_content arg1
 end
 
+And /^I should be on the project page for "(.*?)"$/ do |project_name|
+  id = Project.find_by_name(project_name).id
+  visit("/projects/#{id}")
+end
