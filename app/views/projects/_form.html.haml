@@ -1,7 +1,6 @@
-= form_tag projects_path do
-    = error_messages_for :project
-
-    = label :project, :name, 'Name'
-    = text_field :project, :name
-
-    = submit_tag "Create Project"
+=# p params
+= form_for @project do |f|
+  = f.error_messages
+  = f.label :name
+  = f.text_field :name
+  = f.submit

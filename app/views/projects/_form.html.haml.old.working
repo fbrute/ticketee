@@ -1,0 +1,19 @@
+=# p params
+- _path = :projects if params[:action] == "new"
+- _verb = :post if params[:action] == "new"
+
+- _path = :project if params[:action] == "edit"
+- _verb = :put if params[:action] == "edit"
+
+- _path = :project if params[:action] == "update"
+- _verb = :put if params[:action] == "update"
+
+= form_tag _path , :method => _verb do
+  = error_messages_for :project
+  = label :project, :name, 'Name'
+  = text_field :project, :name
+  - _title = "Create" if params[:action] == "new"
+  - _title = "Update" if params[:action] == "edit"
+
+  - _title ||= 'Update'
+  = submit_tag _title + " Project"
